@@ -37,73 +37,65 @@ export const PricingPreview = () => {
   const [isYearly, setIsYearly] = useState(false);
 
   useEffect(() => {
-    const fetchPlans = async () => {
-      try {
-        const { data: subscriptionPlans, error } = await supabase
-          .from("subscription_plans")
-          .select(`
-            *,
-            plan_features(*),
-            plan_pricing_features(feature_text, is_highlighted, display_order)
-          `)
-          .eq("is_active", true)
-          .eq("show_on_landing", true)
-          .order("display_order");
-
-        if (error) throw error;
-
-        const formattedPlans: Plan[] = subscriptionPlans.map((plan: any) => {
-          const pricingFeatures = plan.plan_pricing_features || [];
-
-          let featureList: string[];
-
-          if (pricingFeatures.length > 0) {
-            featureList = pricingFeatures
-              .sort((a: any, b: any) => a.display_order - b.display_order)
-              .map((f: any) => (f.is_highlighted ? `⭐ ${f.feature_text}` : f.feature_text));
-          } else {
-            const features = plan.plan_features || [];
-            featureList = [];
-
-            features.forEach((feature: any) => {
-              if (feature.feature_type === 'boolean' && feature.feature_value === 'true') {
-                featureList.push(feature.display_name || feature.feature_key);
-              } else if (feature.feature_type === 'text' || feature.feature_type === 'number') {
-                const displayValue = feature.feature_value === 'unlimited'
-                  ? 'Unlimited'
-                  : feature.feature_value;
-                featureList.push(`${feature.display_name || feature.feature_key}: ${displayValue}`);
-              }
-            });
-          }
-
-          return {
-            id: plan.id,
-            name: plan.name,
-            description: plan.description,
-            billing_type: plan.billing_type,
-            is_free_tier: plan.is_free_tier,
-            price_one_time: plan.price_one_time,
-            price_monthly: plan.price_monthly,
-            price_yearly: plan.price_yearly,
-            features: featureList,
-            popular: false,
-          };
-        });
-
-        // Free first, then ascending by monthly price
-        formattedPlans.sort((a, b) => (a.price_monthly || 0) - (b.price_monthly || 0));
-
-        setPlans(formattedPlans);
-      } catch (error) {
-        console.error("Error fetching plans:", error);
-        setPlans([]);
-      } finally {
-        setIsLoading(false);
+    // Hardcoded plans for landing page preview (no Supabase needed)
+    const mockPlans: Plan[] = [
+      {
+        id: "free",
+        name: "Free",
+        description: "Everything you need to run your first pre-lecture check.",
+        billing_type: "subscription",
+        is_free_tier: true,
+        price_monthly: 0,
+        price_yearly: 0,
+        features: [
+          "10 activities total",
+          "5 AI credits per month",
+          "Unlimited participants",
+          "Unlimited plays",
+          "Basic analytics"
+        ],
+        popular: false
+      },
+      {
+        id: "basic",
+        name: "Basic",
+        description: "For lecturers checking comprehension in a single module.",
+        billing_type: "subscription",
+        is_free_tier: false,
+        price_monthly: 9.99,
+        price_yearly: 95.90, // $7.99/mo
+        features: [
+          "50 activities total",
+          "50 AI credits per month",
+          "⭐ Session-level insights",
+          "⭐ Common mistake tracking",
+          "Hide Quizabl branding",
+          "Export to CSV"
+        ],
+        popular: true
+      },
+      {
+        id: "pro",
+        name: "Pro",
+        description: "For teaching multiple modules or large cohorts.",
+        billing_type: "subscription",
+        is_free_tier: false,
+        price_monthly: 14.99,
+        price_yearly: 143.90, // $11.99/mo
+        features: [
+          "⭐ Unlimited activities",
+          "⭐ 150 AI credits per month",
+          "Session-level insights",
+          "Common mistake tracking",
+          "Hide Quizabl branding",
+          "Priority support"
+        ],
+        popular: false
       }
-    };
-
-    fetchPlans();
+    ];
+    
+    setPlans(mockPlans);
+    setIsLoading(false);
   }, []);
 
   const formatPrice = (price: number | null | undefined) => {
