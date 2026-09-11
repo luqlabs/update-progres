@@ -1,0 +1,80 @@
+project_id = "axokltcdvkgzymluzyjr"
+
+[functions.generate-app]
+verify_jwt = true
+
+[functions.chat-assistant]
+verify_jwt = true
+
+[functions.compute-analytics]
+verify_jwt = true
+
+[functions.admin-create-stripe-plan]
+verify_jwt = true
+
+[functions.admin-update-stripe-plan]
+verify_jwt = true
+
+[functions.admin-delete-plan]
+verify_jwt = true
+
+[functions.admin-get-users]
+verify_jwt = true
+
+[functions.admin-manage-user]
+verify_jwt = true
+
+[functions.admin-import-stripe-plan]
+verify_jwt = true
+
+[functions.create-checkout]
+verify_jwt = true
+
+[functions.check-subscription]
+verify_jwt = true
+
+[functions.create-free-subscription]
+verify_jwt = true
+
+[functions.customer-portal]
+verify_jwt = true
+
+[functions.stripe-webhook]
+verify_jwt = false
+
+[functions.generate-sitemap]
+verify_jwt = false
+
+[functions.generate-rss]
+verify_jwt = false
+
+[functions.fetch-url-content]
+verify_jwt = true
+
+[functions.send-signup-webhook]
+verify_jwt = true
+
+[functions.send-welcome-email]
+verify_jwt = true
+
+[functions.send-purchase-confirmation]
+verify_jwt = false
+
+[functions.send-subscription-canceled]
+verify_jwt = false
+
+[functions.send-payment-failed]
+verify_jwt = false
+
+[functions.custom-email-hook]
+verify_jwt = false
+
+[functions.generate-analytics-overview]
+verify_jwt = true
+
+[functions.validate-play-session]
+verify_jwt = false
+
+[functions.play-data]
+verify_jwt = false
+

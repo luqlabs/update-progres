@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+/* Onboarding styles */
+.onboarding-spotlight {
+  position: relative;
+  z-index: 9999;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.7);
+  border-radius: 0.375rem;
+}
+
+.onboarding-pulse {
+  animation: pulse-border 2s infinite;
+}
+
+@keyframes pulse-border {
+  0%, 100% {
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.7), 0 0 0 9999px rgba(0, 0, 0, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px hsl(var(--primary) / 0), 0 0 0 9999px rgba(0, 0, 0, 0.7);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+@layer base {
+  :root {
+    /* Professional monochrome */
+    --background: 44 43% 97%; /* Cadmus cream: #fcf9f2 */
+    --foreground: 0 0% 10%;
+    
+    --cadmus-cream: 44 43% 97%;
+    --cadmus-peach: 20 86% 85%; /* Cadmus peach: #facbb5 */
+    --nav-ink: 0 0% 0%;
+
+    /* Hero badge — emerald accent */
+    --badge-bg: 158 64% 12%;
+    --badge-foreground: 152 40% 92%;
+    --badge-dot: 0 84% 60%;
+
+    /* Landing hero band (Solid Dark Green) */
+    --hero-band: 142 64% 12%;
+    --hero-band-foreground: 142 40% 92%;
+    --hero-band-muted: 142 20% 76%;
+
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    /* Emerald/Green is the single action/brand color; black stays the reading color */
+    --primary: 142 76% 36%;
+    --primary-foreground: 142 40% 96%;
+    --primary-hover: 142 76% 26%;
+
+    --accent: 158 64% 12%;
+    --accent-foreground: 152 40% 96%;
+    --accent-hover: 158 55% 22%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 28%;
+
+    --destructive: 0 65% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 89%;
+    --input: 0 0% 89%;
+    --ring: 142 76% 36%;
+
+    --radius: 0.375rem;
+
+    /* Legacy theme aliases kept for downstream components */
+    --theme-space-bg: 0 0% 100%;
+    --theme-space-primary: 0 0% 9%;
+    --theme-space-secondary: 0 0% 35%;
+
+    --theme-jungle-bg: 0 0% 100%;
+    --theme-jungle-primary: 0 0% 20%;
+    --theme-jungle-secondary: 0 0% 45%;
+
+    --theme-classroom-bg: 0 0% 100%;
+    --theme-classroom-primary: 0 0% 9%;
+    --theme-classroom-secondary: 0 0% 35%;
+
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 97%) 0%, hsl(0 0% 100%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(0 0% 97%) 100%);
+
+    --shadow-soft: 0 1px 2px hsl(0 0% 0% / 0.06);
+    --shadow-medium: 0 6px 20px hsl(0 0% 0% / 0.08);
+    --shadow-large: 0 20px 50px hsl(0 0% 0% / 0.12);
+
+    --success: 0 0% 20%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 0 0% 94%;
+    --peach-light: 0 0% 96%;
+    --orange-text: 0 0% 25%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 15%;
+    --sidebar-primary: 158 64% 12%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 12%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 158 64% 12%;
+
+    --font-sans: 'Work Sans', ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 142 76% 46%;
+    --primary-foreground: 142 64% 10%;
+    --primary-hover: 142 76% 56%;
+
+    --accent: 152 52% 62%;
+    --accent-foreground: 158 64% 10%;
+    --accent-hover: 152 52% 72%;
+
+    --secondary: 0 0% 17%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 17%;
+    --muted-foreground: 0 0% 78%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 0 0% 90%;
+    --success-foreground: 0 0% 8%;
+
+    --border: 0 0% 22%;
+    --input: 0 0% 22%;
+    --ring: 152 52% 62%;
+    --sidebar-background: 0 0% 9%;
+    --sidebar-foreground: 0 0% 92%;
+    --sidebar-primary: 152 52% 62%;
+    --sidebar-primary-foreground: 158 64% 10%;
+    --sidebar-accent: 0 0% 16%;
+    --sidebar-accent-foreground: 0 0% 92%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 152 52% 62%;
+    --font-sans: 'Work Sans', ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    --radius: 0.375rem;
+
+  }
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-size: 15px;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Work Sans', 'Noto Naskh Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: 'ss01', 'ss02';
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-foreground;
+  }
+
+  .font-display {
+    font-family: 'Instrument Serif', 'Noto Naskh Arabic', ui-serif, Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+}
+
+@layer utilities {
+  .touch-target {
+    @apply min-h-12 min-w-12;
+  }
+
+  .mobile-text-base {
+    @apply text-sm sm:text-base md:text-lg;
+  }
+
+  .mobile-heading {
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl;
+  }
+}
+@keyframes shimmer-sweep {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+.badge-dot-flash {
+  animation: badge-flash 1.1s ease-in-out infinite;
+}
+@keyframes badge-flash {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 hsl(var(--badge-dot) / 0.7); }
+  50% { opacity: 0.35; box-shadow: 0 0 0 5px hsl(var(--badge-dot) / 0); }
+}
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--muted-foreground)) 0%,
+    hsl(var(--muted-foreground)) 40%,
+    hsl(var(--primary)) 50%,
+    hsl(var(--muted-foreground)) 60%,
+    hsl(var(--muted-foreground)) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer-sweep 2.4s linear infinite;
+}

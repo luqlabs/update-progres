@@ -1,0 +1,17 @@
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.quizabl.com/sitemap.xml
+Sitemap: https://axokltcdvkgzymluzyjr.supabase.co/functions/v1/generate-sitemap

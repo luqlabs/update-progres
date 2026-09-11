@@ -1,0 +1,250 @@
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuSeparator,
+} from "@/components/ui/dropdown-menu";
+import { Pencil, Eye, Share2, Trash2, MoreVertical, FileQuestion, Layers, Link2, Star, FolderOpen, Folder as FolderIcon, LayoutGrid, Check, Briefcase, BookOpen, GraduationCap, Users, Lightbulb, Target, Award } from "lucide-react";
+import { formatDistanceToNow } from "date-fns";
+
+interface AppCardProps {
+  app: {
+    id: string;
+    title: string;
+    app_type: string;
+    theme: string;
+    share_code: string;
+    created_at: string;
+    updated_at: string;
+    is_starred?: boolean;
+    folder_id?: string | null;
+  };
+  folders: Array<{
+    id: string;
+    name: string;
+    color: string;
+    icon: string;
+  }>;
+  participantCount?: number;
+  isSelected?: boolean;
+  onSelect?: (selected: boolean) => void;
+  onEdit: () => void;
+  onPreview: () => void;
+  onShare: () => void;
+  onDelete: () => void;
+  onToggleStar?: (isStarred: boolean) => void;
+  onMoveToFolder?: (folderId: string | null) => void;
+}
+
+const getAppTypeIcon = (type: string) => {
+  switch (type) {
+    case "quiz":
+      return FileQuestion;
+    case "flashcards":
+      return Layers;
+    case "matching":
+      return Link2;
+    default:
+      return FileQuestion;
+  }
+};
+
+const getThemeGradient = (theme: string) => {
+  switch (theme) {
+    case "indigo":
+      return "from-indigo-500/20 to-violet-500/20";
+    case "emerald":
+      return "from-emerald-500/20 to-teal-500/20";
+    case "slate":
+      return "from-slate-500/20 to-slate-300/20";
+    case "blue":
+      return "from-blue-500/20 to-cyan-500/20";
+    case "amber":
+      return "from-amber-400/20 to-rose-300/20";
+    case "sky":
+      return "from-sky-300/20 to-cyan-200/20";
+    default:
+      return "from-primary/20 to-accent/20";
+  }
+};
+
+const iconMap: Record<string, any> = {
+  folder: FolderIcon,
+  briefcase: Briefcase,
+  book: BookOpen,
+  graduation: GraduationCap,
+  users: Users,
+  lightbulb: Lightbulb,
+  target: Target,
+  award: Award,
+};
+
+const colorMap: Record<string, string> = {
+  blue: "bg-blue-500",
+  green: "bg-green-500",
+  purple: "bg-purple-500",
+  orange: "bg-orange-500",
+  red: "bg-red-500",
+  pink: "bg-pink-500",
+  yellow: "bg-yellow-500",
+  indigo: "bg-indigo-500",
+};
+
+const AppCard = ({ app, folders, participantCount = 0, isSelected, onSelect, onEdit, onPreview, onShare, onDelete, onToggleStar, onMoveToFolder }: AppCardProps) => {
+  const TypeIcon = getAppTypeIcon(app.app_type);
+  const themeGradient = getThemeGradient(app.theme);
+
+  return (
+    <Card 
+      className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 overflow-hidden relative"
+    >
+      {onSelect && (
+        <div className="absolute top-3 left-3 z-10">
+          <Checkbox
+            checked={isSelected}
+            onCheckedChange={onSelect}
+            className="bg-background"
+          />
+        </div>
+      )}
+      <div className={`h-2 bg-gradient-to-r ${themeGradient}`} />
+      <CardHeader>
+        <div className="flex items-start justify-between">
+          <div className="flex items-start gap-3 flex-1 overflow-hidden">
+            <div className="p-2 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10">
+              <TypeIcon className="w-5 h-5 text-primary" />
+            </div>
+            <div className="flex-1 min-w-0 overflow-hidden">
+              <CardTitle className="text-lg mb-1 truncate block max-w-full">{app.title}</CardTitle>
+              <CardDescription className="capitalize truncate">
+                {app.app_type} • {app.theme} theme
+              </CardDescription>
+            </div>
+          </div>
+          <div className="flex items-center gap-1">
+            {onToggleStar && (
+              <Button
+                variant="ghost"
+                size="sm"
+                className="h-8 w-8 p-0"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onToggleStar(!app.is_starred);
+                }}
+              >
+                <Star className={`w-4 h-4 ${app.is_starred ? "fill-yellow-500 text-yellow-500" : ""}`} />
+              </Button>
+            )}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-8 w-8 p-0 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  <MoreVertical className="w-4 h-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                {onMoveToFolder && (
+                  <>
+                    <DropdownMenuSub>
+                      <DropdownMenuSubTrigger>
+                        <FolderOpen className="w-4 h-4 mr-2" />
+                        Move to folder
+                      </DropdownMenuSubTrigger>
+                      <DropdownMenuSubContent>
+                        {app.folder_id && (
+                          <>
+                            <DropdownMenuItem onClick={() => onMoveToFolder(null)}>
+                              <LayoutGrid className="w-4 h-4 mr-2" />
+                              Remove from folder
+                            </DropdownMenuItem>
+                            <DropdownMenuSeparator />
+                          </>
+                        )}
+                        
+                        {folders.map((folder) => {
+                          const Icon = iconMap[folder.icon] || FolderIcon;
+                          const colorClass = colorMap[folder.color] || "bg-blue-500";
+                          const isCurrentFolder = app.folder_id === folder.id;
+                          
+                          return (
+                            <DropdownMenuItem
+                              key={folder.id}
+                              onClick={() => onMoveToFolder(folder.id)}
+                              disabled={isCurrentFolder}
+                            >
+                              <div className={`w-4 h-4 rounded ${colorClass} flex items-center justify-center mr-2`}>
+                                <Icon className="w-2.5 h-2.5 text-white" />
+                              </div>
+                              {folder.name}
+                              {isCurrentFolder && <Check className="w-4 h-4 ml-auto" />}
+                            </DropdownMenuItem>
+                          );
+                        })}
+                        
+                        {folders.length === 0 && (
+                          <DropdownMenuItem disabled>
+                            No folders yet
+                          </DropdownMenuItem>
+                        )}
+                      </DropdownMenuSubContent>
+                    </DropdownMenuSub>
+                    <DropdownMenuSeparator />
+                  </>
+                )}
+                
+                <DropdownMenuItem onClick={onShare}>
+                  <Share2 className="w-4 h-4 mr-2" />
+                  Share Link
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={onDelete} className="text-destructive">
+                  <Trash2 className="w-4 h-4 mr-2" />
+                  Delete Activity
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <div className="flex gap-2 mb-3">
+          <Button size="sm" className="flex-1" onClick={onEdit}>
+            <Pencil className="w-4 h-4 mr-1" />
+            Edit
+          </Button>
+          <Button size="sm" variant="outline" className="flex-1" onClick={onPreview}>
+            <Eye className="w-4 h-4 mr-1" />
+            Preview
+          </Button>
+        </div>
+        <div className="flex items-center justify-between mb-3">
+          <p className="text-xs text-muted-foreground">
+            Updated {formatDistanceToNow(new Date(app.updated_at), { addSuffix: true })}
+          </p>
+          {participantCount > 0 ? (
+            <Badge variant="secondary" className="gap-1 text-xs">
+              <Users className="w-3 h-3" />
+              {participantCount}
+            </Badge>
+          ) : (
+            <span className="text-xs text-muted-foreground/50 flex items-center gap-1">
+              <Users className="w-3 h-3" /> 0
+            </span>
+          )}
+        </div>
+      </CardContent>
+    </Card>
+  );
+};
+
+export default AppCard;
