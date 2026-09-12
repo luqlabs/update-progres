@@ -5,9 +5,11 @@ import { Helmet } from "react-helmet";
 import { useCrisp } from "@/hooks/useCrisp";
 
 import { HeroCollage } from "@/components/landing/HeroCollage";
+import whyQuizablBanner from "@/assets/landing/why-quizabl-banner.jpg";
 import { CadmusMaterialSection } from "@/components/landing/CadmusMaterialSection";
 import { AnimatedDemo } from "@/components/landing/AnimatedDemo";
 import { CadmusHowItWorks } from "@/components/landing/CadmusHowItWorks";
+import ctaIllustration from "@/assets/landing/cta-illustration.png";
 
 import { ProductTabs } from "@/components/landing/ProductTabs";
 import { StatsSection } from "@/components/landing/StatsSection";
@@ -20,12 +22,37 @@ import { PricingPreview } from "@/components/landing/PricingPreview";
 import { FAQSection } from "@/components/landing/FAQSection";
 import { Footer } from "@/components/landing/Footer";
 import { Logo } from "@/components/ui/logo";
+import Lenis from 'lenis';
+import 'lenis/dist/lenis.css';
 
 import { getCanonicalUrl, createOrganizationSchema, createWebsiteSchema } from "@/lib/seo";
 
 const Index = () => {
   const navigate = useNavigate();
   useCrisp();
+
+  useEffect(() => {
+    // Initialize Lenis smooth scroll for the landing page
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
 
   const canonicalUrl = getCanonicalUrl('');
   const organizationSchema = createOrganizationSchema();
@@ -122,47 +149,79 @@ const Index = () => {
         <CadmusHowItWorks />
 
         {/* 6. Product Tabs */}
-        <div className="bg-white relative z-[21] -mt-16 rounded-t-[3rem] md:rounded-t-[4rem] overflow-hidden">
+        <div className="relative z-[21] -mt-16 rounded-t-[3rem] md:rounded-t-[4rem] overflow-hidden" style={{ backgroundColor: "#f3f0ff" }}>
           <ProductTabs />
         </div>
 
-        {/* 7. Emerald Band — Why Quizabl + Stats */}
-        <div className="relative z-[22] -mt-16 rounded-t-[3rem] md:rounded-t-[4rem] overflow-hidden" style={{ backgroundColor: 'hsl(var(--hero-band))' }}>
+        {/* 7. Why Quizabl — Cadmus Case Study Style */}
+        <div className="relative z-[22] -mt-16 rounded-t-[3rem] md:rounded-t-[4rem] overflow-hidden" style={{ backgroundColor: 'hsl(var(--cadmus-peach) / 0.35)' }}>
           <section className="py-20 md:py-28">
             <div className="max-w-6xl mx-auto px-6 sm:px-8">
-              <div className="text-center max-w-2xl mx-auto mb-14">
-                <span className="block text-xs font-semibold uppercase tracking-[0.16em] mb-3" style={{ color: 'hsl(var(--hero-band-muted))' }}>Why Quizabl</span>
-                <h2 className="font-display italic text-3xl md:text-5xl leading-[1.1]" style={{ color: 'hsl(var(--hero-band-foreground))' }}>
-                  Why lecturers choose Quizabl for their cohort
-                </h2>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-                {[
-                  { title: "Spot the gaps", desc: "Spot the gaps in your cohort before the lecture, not after the exam." },
-                  { title: "No student logins", desc: "No student logins, no setup — one link works on any device." },
-                  { title: "Your material", desc: "Works with the material you already have: PDFs, slides, notes or a URL." },
-                  { title: "Minutes, not hours", desc: "Build, edit and share in a single sitting." },
-                ].map((item) => (
-                  <div key={item.title} className="text-center">
-                    <h3 className="font-semibold text-base mb-2" style={{ color: 'hsl(var(--hero-band-foreground))' }}>{item.title}</h3>
-                    <p className="text-sm leading-relaxed" style={{ color: 'hsl(var(--hero-band-muted))' }}>{item.desc}</p>
+
+              {/* Image Banner + Floating Card */}
+              <div className="relative mb-24 md:mb-28">
+                {/* Large Image */}
+                <div className="w-full h-[300px] md:h-[420px] rounded-2xl overflow-hidden shadow-lg">
+                  <img
+                    src={whyQuizablBanner}
+                    alt="Lecturer workspace with assessment dashboard"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Floating Card with 4 Feature Points */}
+                <div className="
+                  relative md:absolute z-10
+                  mt-[-2rem] mx-4
+                  md:bottom-[-4rem] md:left-[-1rem] md:mx-0
+                  bg-white rounded-xl p-8 md:p-10
+                  shadow-[0_20px_50px_rgba(0,0,0,0.08)]
+                  max-w-md
+                ">
+                  <div className="flex items-center gap-2 mb-5">
+                    <span className="text-[11px] font-bold uppercase tracking-[0.1em] text-muted-foreground">Why Quizabl</span>
+                    <span className="text-muted-foreground/40">|</span>
+                    <span className="text-[11px] font-bold uppercase tracking-[0.1em] text-muted-foreground">Higher Education</span>
                   </div>
-                ))}
+                  <h3 className="font-display text-2xl md:text-3xl text-foreground mb-6 leading-[1.15]">
+                    Why lecturers choose Quizabl for their cohort
+                  </h3>
+                  <div className="space-y-4">
+                    {[
+                      { title: "Spot the gaps", desc: "Spot the gaps in your cohort before the lecture, not after the exam." },
+                      { title: "No student logins", desc: "No student logins, no setup — one link works on any device." },
+                      { title: "Your material", desc: "Works with the material you already have: PDFs, slides, notes or a URL." },
+                      { title: "Minutes, not hours", desc: "Build, edit and share in a single sitting." },
+                    ].map((item) => (
+                      <div key={item.title} className="border-l-[3px] border-primary/30 pl-4">
+                        <h4 className="text-[13px] font-bold text-foreground mb-0.5">{item.title}</h4>
+                        <p className="text-[13px] text-muted-foreground leading-relaxed">{item.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-              <StatsSection tone="band" />
+
+              {/* Stats Row */}
+              <div className="text-center">
+                <span className="block text-[11px] font-bold uppercase tracking-[0.14em] mb-8" style={{ color: 'hsl(var(--primary))' }}>
+                  Built for speed and simplicity
+                </span>
+                <StatsSection tone="light" />
+              </div>
+
             </div>
           </section>
         </div>
 
         {/* 8. Features Grid */}
-        <div className="relative z-[23] -mt-16 rounded-t-[3rem] md:rounded-t-[4rem] overflow-hidden" style={{ backgroundColor: 'hsl(var(--cadmus-cream))' }}>
+        <div className="relative -mt-16 rounded-t-[3rem] md:rounded-t-[4rem]" style={{ backgroundColor: 'hsl(var(--cadmus-cream))' }}>
           <FeaturesSection />
         </div>
 
         {/* 9. Method Comparison */}
-        <div className="relative z-[24] -mt-16 rounded-t-[3rem] md:rounded-t-[4rem] overflow-hidden" style={{ backgroundColor: "#e8f0fe" }}>
+        <div className="relative z-[24] -mt-16 md:-mt-24 rounded-t-[3rem] md:rounded-t-[4rem] overflow-hidden" style={{ backgroundColor: "#e8f0fe" }}>
           <MethodComparisonSection />
-          <ComparisonSection />
         </div>
 
         {/* 10. Target Audience */}
@@ -185,19 +244,34 @@ const Index = () => {
           <FAQSection />
         </div>
 
-        {/* 14. Footer CTA & Footer — NOT TOUCHED */}
-        <div className="relative z-[60] -mt-16 rounded-t-[3rem] md:rounded-t-[4rem] overflow-hidden" style={{ backgroundColor: 'hsl(var(--hero-band))' }}>
-          <section className="py-20 md:py-28">
-            <div className="max-w-3xl mx-auto px-6 sm:px-8 text-center">
-              <h2 className="font-display italic text-3xl md:text-5xl leading-[1.1] mb-5 text-white">
-                Start with a single pre-lecture activity.
-              </h2>
-              <button onClick={() => navigate('/auth')} className="rounded-md bg-white text-black px-8 py-4 font-nav text-[14px] font-semibold hover:bg-gray-100 transition-colors">
-                Get started free
-              </button>
+        {/* 14. Footer CTA & Footer */}
+        <div className="relative z-[60] -mt-16 rounded-t-[3rem] md:rounded-t-[4rem] overflow-hidden bg-[#fdfaf6]">
+          <section className="py-24 md:py-32 px-6 sm:px-8 border-b border-slate-200/50">
+            <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 md:gap-8">
+              <div className="w-full md:w-1/2 md:pr-12 text-center md:text-left">
+                <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-slate-900 mb-8 leading-[1.1] tracking-tight">
+                  Start with a single pre-lecture activity.
+                </h2>
+                <button 
+                  onClick={() => navigate('/auth')} 
+                  className="rounded-md bg-slate-900 text-white px-8 py-3.5 font-nav text-[15px] font-semibold hover:bg-slate-800 transition-colors shadow-sm"
+                >
+                  Get started free
+                </button>
+              </div>
+              <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+                <img 
+                  src={ctaIllustration} 
+                  alt="Quizabl interactive cards" 
+                  className="w-full max-w-[500px] h-auto object-contain drop-shadow-md"
+                />
+              </div>
             </div>
           </section>
-          <Footer />
+          
+          <div className="bg-white">
+            <Footer />
+          </div>
         </div>
 
       </div>

@@ -1,5 +1,6 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Section, SectionHeading } from "./Section";
+import faqBgImage from "@/assets/landing/features-bottom-banner.jpg";
 
 const faqs = [
   {
@@ -63,26 +64,49 @@ const faqs = [
 
 export const FAQSection = () => {
   return (
-    <Section containerClassName="max-w-3xl" tone="transparent">
-      <SectionHeading
-        eyebrow="FAQ"
-        title="Frequently asked questions"
-        description="Everything you need to know about Quizabl"
-      />
+    <section className="relative py-24 md:py-32 px-6 sm:px-8 overflow-hidden min-h-[80vh] flex items-center justify-center">
+      {/* Background Image Setup */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={faqBgImage} 
+          alt="FAQ Background" 
+          className="w-full h-full object-cover opacity-60"
+        />
+        {/* Soft gradient overlay to blend image */}
+        <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-slate-100/40 to-slate-200/50 mix-blend-multiply" />
+      </div>
 
-      <Accordion type="single" collapsible className="divide-y divide-border border-y border-border">
-        {faqs.map((faq, index) => (
-          <AccordionItem key={index} value={`item-${index}`} className="border-0">
-            <AccordionTrigger className="text-left font-semibold hover:text-primary transition-colors py-5">
-              {faq.question}
-            </AccordionTrigger>
-            <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-5">
-              {faq.answer}
-            </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
-    </Section>
+      {/* Floating Card for readability */}
+      <div className="relative z-10 w-full max-w-4xl bg-white/95 backdrop-blur-sm shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] rounded-[2.5rem] p-8 md:p-14 border border-white">
+        <div className="text-center mb-12">
+          <span className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500 mb-6 block">
+            FAQ
+          </span>
+          <h3 className="font-display italic text-3xl md:text-5xl text-slate-900 mb-4 leading-[1.15]">
+            Frequently asked questions
+          </h3>
+        </div>
+
+        <Accordion type="single" collapsible className="w-full">
+          {faqs.map((faq, index) => (
+            <AccordionItem 
+              key={index} 
+              value={`item-${index}`} 
+              className="border-b border-slate-200/60 px-2"
+            >
+              <AccordionTrigger className="text-left font-bold text-[16px] md:text-[17px] text-slate-800 hover:text-indigo-600 hover:no-underline transition-colors py-6">
+                {faq.question}
+              </AccordionTrigger>
+              <AccordionContent className="text-[15px] md:text-[16px] text-slate-600 leading-relaxed pb-6 pr-8 font-medium">
+                {faq.answer}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </div>
+    </section>
   );
 };
+
+export default FAQSection;
 

@@ -26,7 +26,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-card border-t border-border mt-20">
+    <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
           {/* Quizabl Column */}
