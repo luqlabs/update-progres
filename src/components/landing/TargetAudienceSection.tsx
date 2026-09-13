@@ -66,24 +66,24 @@ export const TargetAudienceSection = ({ className = "" }: { className?: string }
         
         {/* Left Side Pills (Moving Right as you scroll down) */}
         <div 
-          className="hidden md:flex absolute top-[10%] left-[5%] items-center gap-3 bg-white/80 backdrop-blur-md px-5 py-3 rounded-full shadow-lg border border-white"
-          style={{ transform: `translateY(${offset * 0.05}px) translateX(${offset * -0.15}px) rotate(4deg)` }}
+          className="hidden md:flex absolute top-[10%] left-[8%] lg:left-[5%] items-center gap-3 bg-white/80 backdrop-blur-md px-5 py-3 rounded-full shadow-lg border border-white"
+          style={{ transform: `translateY(${offset * 0.05}px) translateX(${offset * -0.05}px) rotate(4deg)` }}
         >
           <GraduationCap className="w-5 h-5 text-orange-600" />
           <span className="text-[15px] font-bold text-slate-800">Professors</span>
         </div>
 
         <div 
-          className="hidden md:flex absolute top-[55%] left-[-2%] items-center gap-3 bg-white/80 backdrop-blur-md px-5 py-3 rounded-full shadow-lg border border-white"
-          style={{ transform: `translateY(${offset * -0.04}px) translateX(${offset * -0.2}px) rotate(0deg)` }}
+          className="hidden md:flex absolute top-[55%] left-[2%] lg:left-[-2%] items-center gap-3 bg-white/80 backdrop-blur-md px-5 py-3 rounded-full shadow-lg border border-white"
+          style={{ transform: `translateY(${offset * -0.04}px) translateX(${offset * -0.06}px) rotate(0deg)` }}
         >
           <FlaskConical className="w-5 h-5 text-emerald-600" />
           <span className="text-[15px] font-bold text-slate-800">STEM Lecturers</span>
         </div>
 
         <div 
-          className="hidden md:flex absolute top-[85%] left-[15%] items-center gap-3 bg-white/80 backdrop-blur-md px-5 py-3 rounded-full shadow-lg border border-white"
-          style={{ transform: `translateY(${offset * 0.08}px) translateX(${offset * -0.1}px) rotate(-4deg)` }}
+          className="hidden md:flex absolute top-[85%] left-[12%] lg:left-[15%] items-center gap-3 bg-white/80 backdrop-blur-md px-5 py-3 rounded-full shadow-lg border border-white"
+          style={{ transform: `translateY(${offset * 0.08}px) translateX(${offset * -0.04}px) rotate(-4deg)` }}
         >
           <Scale className="w-5 h-5 text-blue-600" />
           <span className="text-[15px] font-bold text-slate-800">Law & Business</span>
@@ -91,24 +91,24 @@ export const TargetAudienceSection = ({ className = "" }: { className?: string }
 
         {/* Right Side Pills (Moving Left as you scroll down) */}
         <div 
-          className="hidden md:flex absolute top-[15%] right-[5%] items-center gap-3 bg-white/80 backdrop-blur-md px-5 py-3 rounded-full shadow-lg border border-white"
-          style={{ transform: `translateY(${offset * -0.06}px) translateX(${offset * 0.15}px) rotate(-4deg)` }}
+          className="hidden md:flex absolute top-[15%] right-[8%] lg:right-[5%] items-center gap-3 bg-white/80 backdrop-blur-md px-5 py-3 rounded-full shadow-lg border border-white"
+          style={{ transform: `translateY(${offset * -0.06}px) translateX(${offset * 0.05}px) rotate(-4deg)` }}
         >
           <BookOpen className="w-5 h-5 text-rose-600" />
           <span className="text-[15px] font-bold text-slate-800">Lecturers</span>
         </div>
 
         <div 
-          className="hidden md:flex absolute top-[50%] right-[-3%] items-center gap-3 bg-white/80 backdrop-blur-md px-5 py-3 rounded-full shadow-lg border border-white"
-          style={{ transform: `translateY(${offset * 0.07}px) translateX(${offset * 0.22}px) rotate(0deg)` }}
+          className="hidden md:flex absolute top-[50%] right-[2%] lg:right-[-3%] items-center gap-3 bg-white/80 backdrop-blur-md px-5 py-3 rounded-full shadow-lg border border-white"
+          style={{ transform: `translateY(${offset * 0.07}px) translateX(${offset * 0.07}px) rotate(0deg)` }}
         >
           <Users className="w-5 h-5 text-purple-600" />
           <span className="text-[15px] font-bold text-slate-800">Assistant & TAs</span>
         </div>
 
         <div 
-          className="hidden md:flex absolute top-[80%] right-[10%] items-center gap-3 bg-white/80 backdrop-blur-md px-5 py-3 rounded-full shadow-lg border border-white"
-          style={{ transform: `translateY(${offset * -0.03}px) translateX(${offset * 0.12}px) rotate(4deg)` }}
+          className="hidden md:flex absolute top-[80%] right-[12%] lg:right-[10%] items-center gap-3 bg-white/80 backdrop-blur-md px-5 py-3 rounded-full shadow-lg border border-white"
+          style={{ transform: `translateY(${offset * -0.03}px) translateX(${offset * 0.04}px) rotate(4deg)` }}
         >
           <HeartPulse className="w-5 h-5 text-pink-600" />
           <span className="text-[15px] font-bold text-slate-800">Health Sciences</span>

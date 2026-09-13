@@ -175,11 +175,11 @@ export const FeaturesSection = () => {
           {/* Floating Card positioned overlapping bottom right */}
           <div className="
             absolute z-[30]
-            bottom-[-4rem] right-[-2rem]
-            md:bottom-[-6rem] md:right-[-4rem] lg:right-[-5rem]
+            bottom-[-4rem] left-4 right-4
+            md:bottom-[-6rem] md:left-auto md:right-[-4rem] lg:right-[-5rem]
             bg-white rounded-[1.5rem] p-8 md:p-10
             shadow-[0_20px_50px_rgba(0,0,0,0.1)]
-            w-[90%] md:w-[480px]
+            w-auto md:w-[480px]
           ">
             <span className="text-xs font-bold tracking-wider text-muted-foreground mb-3 block">
               The Complete Solution

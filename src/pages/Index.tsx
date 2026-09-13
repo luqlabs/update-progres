@@ -93,8 +93,13 @@ const Index = () => {
                     </button>
                   </SheetTrigger>
                   <SheetContent side="right" className="w-[80%] sm:w-[360px] bg-white">
-                    <div className="flex flex-col gap-5 mt-10 text-base font-medium text-foreground">
-                      <button onClick={() => navigate('/auth?mode=signup')} className="rounded-md bg-primary text-primary-foreground px-5 py-3 text-sm font-semibold">Sign up</button>
+                    <div className="flex flex-col gap-6 mt-12 text-base font-medium text-foreground px-2">
+                      <button onClick={() => { scrollTo('features'); document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' })); }} className="text-left hover:text-primary transition-colors text-lg">Features</button>
+                      <button onClick={() => { scrollTo('audience'); document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' })); }} className="text-left hover:text-primary transition-colors text-lg">Who it's for</button>
+                      <button onClick={() => { scrollTo('pricing'); document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' })); }} className="text-left hover:text-primary transition-colors text-lg">Pricing</button>
+                      <hr className="my-2 border-border/40" />
+                      <button onClick={() => navigate('/auth')} className="text-left hover:text-primary transition-colors text-lg">Login</button>
+                      <button onClick={() => navigate('/auth?mode=signup')} className="rounded-md bg-primary text-primary-foreground px-5 py-3.5 text-base font-semibold text-center w-full mt-2">Sign up</button>
                     </div>
                   </SheetContent>
                 </Sheet>
