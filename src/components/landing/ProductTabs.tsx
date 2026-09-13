@@ -5,7 +5,7 @@ import quizzesImg from "@/assets/landing/tab_quizzes_real_v2.jpg";
 import flashcardsImg from "@/assets/landing/tab_flashcards_real_v2.jpg";
 import matchingImg from "@/assets/landing/tab_matching_real_v2.jpg";
 import editingImg from "@/assets/landing/tab_editing_real_v2.jpg";
-import analyticsImg from "@/assets/landing/tab_analytics_real_v2.jpg";
+import analyticsImg from "@/assets/landing/Cohort analytics.jpeg";
 
 const products = [
   {

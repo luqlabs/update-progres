@@ -10,7 +10,7 @@ import whyQuizablBanner from "@/assets/landing/why-quizabl-banner.jpg";
 import { CadmusMaterialSection } from "@/components/landing/CadmusMaterialSection";
 import { AnimatedDemo } from "@/components/landing/AnimatedDemo";
 import { CadmusHowItWorks } from "@/components/landing/CadmusHowItWorks";
-import ctaIllustration from "@/assets/landing/RV bhs inggris.png";
+import ctaIllustration from "@/assets/landing/Final.png";
 
 import { ProductTabs } from "@/components/landing/ProductTabs";
 import { StatsSection } from "@/components/landing/StatsSection";
@@ -252,7 +252,7 @@ const Index = () => {
 
         {/* 14. Footer CTA */}
         <div className="relative z-[60] -mt-16 rounded-t-[3rem] md:rounded-t-[4rem] overflow-hidden" style={{ backgroundColor: 'hsl(var(--cadmus-peach))' }}>
-          <section className="pt-24 pb-12 md:pt-32 md:pb-16 px-6 sm:px-8">
+          <section className="pt-8 pb-12 md:pt-12 md:pb-16 px-6 sm:px-8">
             <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 md:gap-16">
               <div className="w-full md:w-1/2 text-center md:text-left">
                 <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-slate-900 mb-8 leading-[1.1] tracking-tight">
@@ -267,12 +267,6 @@ const Index = () => {
                     className="rounded-full bg-slate-900 text-white px-8 py-3.5 font-nav text-[15px] font-semibold hover:bg-slate-800 transition-colors shadow-sm w-full sm:w-auto"
                   >
                     Get started free
-                  </button>
-                  <button 
-                    onClick={() => navigate('/auth')} 
-                    className="rounded-full bg-white text-slate-900 border border-slate-200 px-8 py-3.5 font-nav text-[15px] font-semibold hover:bg-slate-50 transition-colors shadow-sm w-full sm:w-auto"
-                  >
-                    Talk to sales
                   </button>
                 </div>
               </div>
