@@ -9,7 +9,7 @@ const tabs = [
     id: "editing",
     label: "EDITING METHOD",
     title: "Conversational drafting + full manual control",
-    description: "Where QuestionWell limits you to manual forms and Kahoot to rigid clicking, Quizabl lets you describe what you want in plain chat—then gives you a powerful editor to tweak every single detail.",
+    description: "Where QuestionWell limits you to manual forms and Kahoot to rigid clicking, Quizabl lets you describe what you want in plain chat, then gives you a powerful editor to tweak every single detail.",
     image: tabEditingImg
   },
   {

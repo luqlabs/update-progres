@@ -114,7 +114,7 @@ export const PricingPreview = () => {
     <section id="pricing" className="py-24 md:py-32 px-6 sm:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 relative z-10">
-          <span className="text-xs font-bold uppercase tracking-[0.16em] text-indigo-900/50 mb-6 block">
+          <span className="text-sm font-bold tracking-wider text-indigo-900/50 mb-6 block">
             Pricing
           </span>
           <h3 className="font-display italic text-4xl md:text-5xl lg:text-6xl text-slate-900 mb-6 leading-[1.15]">
@@ -207,7 +207,7 @@ export const PricingPreview = () => {
                     </div>
                     <p className="text-[13px] font-bold text-slate-500 mt-3">
                       {isFree
-                        ? 'Free forever — no card required'
+                        ? 'Free forever, no card required'
                         : isYearly && plan.price_yearly
                           ? `$${(plan.price_yearly / 12).toFixed(2)}/month billed annually`
                           : 'Billed monthly · cancel anytime'}
@@ -285,7 +285,7 @@ export const PricingPreview = () => {
 
                   {!isFree && (
                     <p className="mt-4 text-center text-[12px] font-bold text-slate-500">
-                      Cancel anytime — no notice period
+                      Cancel anytime, no notice period
                     </p>
                   )}
 

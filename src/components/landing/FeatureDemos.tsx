@@ -4,20 +4,20 @@ import { Plus, Minus } from "lucide-react";
 const showcaseContent = [{
   id: "create",
   label: "Build",
-  headline: "From conversation to pre-lecture activity",
-  description: "Describe your lecture topic and learning outcomes. Quizabl drafts a complete pre-assessment in seconds—then you refine it by chatting or editing questions directly.",
+  headline: "From conversation to pre lecture activity",
+  description: "Describe your lecture topic and learning outcomes. Quizabl drafts a complete pre assessment in seconds, then you refine it by chatting or editing questions directly.",
   gif: "/demo-create-play.gif"
 }, {
   id: "customize",
   label: "Refine",
   headline: "Adjust difficulty and format by asking",
-  description: "Raise the rigour, rewrite distractors, switch question types, or change the theme—no rebuilding, no clicking through settings.",
+  description: "Raise the rigour, rewrite distractors, switch question types, or change the theme. No rebuilding, no clicking through settings.",
   gif: "/demo-theme-customization.gif"
 }, {
   id: "analytics",
   label: "Insight",
   headline: "See the gap before you teach it",
-  description: "Question-level results show exactly which concepts your cohort hasn't grasped, so you can reshape the session before you walk in.",
+  description: "Question level results show exactly which concepts your cohort hasn't grasped, so you can reshape the session before you walk in.",
   gif: "/demo-analytics.gif"
 }];
 
@@ -39,7 +39,7 @@ export const FeatureDemos = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h3 className="font-display italic text-3xl md:text-5xl text-foreground mb-4 max-w-2xl mx-auto">See how it works in practice</h3>
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">Build, refine, and read the results—the full workflow a lecturer runs before a session.</p>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">Build, refine, and read the results. The full workflow a lecturer runs before a session.</p>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">

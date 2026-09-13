@@ -144,7 +144,7 @@ function AttachmentChip({
   );
 }
 
-const LET_AI_DECIDE = "You decide — pick what fits best";
+const LET_AI_DECIDE = "You decide, pick what fits best";
 
 /**
  * A clarifying question card: the assistant asks one thing, the lecturer
@@ -381,7 +381,7 @@ const ChatInterface = ({
       if (!appId || appId === "new") {
         setMessages([{
           role: "assistant",
-          content: "Hey! 👋 I'm here to help you create engaging learning experiences.\n\nJust tell me what you're thinking — whether it's a quiz, flashcards, or a matching game. You can be as specific or vague as you want. I'll ask questions if I need more details!\n\n**Quick examples:**\n• \"Create a lecture quiz on microeconomics\"\n• \"I need vocabulary flashcards for business English\"\n• \"Build a compliance training assessment\"\n\nWhat would you like to create?",
+          content: "Hey! 👋 I'm here to help you create engaging learning experiences.\n\nJust tell me what you're thinking, whether it's a quiz, flashcards, or a matching game. You can be as specific or vague as you want. I'll ask questions if I need more details!\n\n**Quick examples:**\n• \"Create a lecture quiz on microeconomics\"\n• \"I need vocabulary flashcards for business English\"\n• \"Build a compliance training assessment\"\n\nWhat would you like to create?",
         }]);
         return;
       }
@@ -406,7 +406,7 @@ const ChatInterface = ({
         console.error("Error loading chat history:", error);
         setMessages([{
           role: "assistant",
-          content: "Hey! 👋 I'm here to help you create engaging learning experiences.\n\nJust tell me what you're thinking — whether it's a quiz, flashcards, or a matching game. You can be as specific or vague as you want. I'll ask questions if I need more details!\n\n**Quick examples:**\n• \"Create a lecture quiz on microeconomics\"\n• \"I need vocabulary flashcards for business English\"\n• \"Build a compliance training assessment\"\n\nWhat would you like to create?",
+          content: "Hey! 👋 I'm here to help you create engaging learning experiences.\n\nJust tell me what you're thinking, whether it's a quiz, flashcards, or a matching game. You can be as specific or vague as you want. I'll ask questions if I need more details!\n\n**Quick examples:**\n• \"Create a lecture quiz on microeconomics\"\n• \"I need vocabulary flashcards for business English\"\n• \"Build a compliance training assessment\"\n\nWhat would you like to create?",
         }]);
       } else if (data && data.length > 0) {
         const fromDb: Message[] = data.map((msg: any) => ({
@@ -430,7 +430,7 @@ const ChatInterface = ({
       } else {
         setMessages([{
           role: "assistant",
-          content: "Hey! 👋 I'm here to help you create engaging learning experiences.\n\nJust tell me what you're thinking — whether it's a quiz, flashcards, or a matching game. You can be as specific or vague as you want. I'll ask questions if I need more details!\n\n**Quick examples:**\n• \"Create a lecture quiz on microeconomics\"\n• \"I need vocabulary flashcards for business English\"\n• \"Build a compliance training assessment\"\n\nWhat would you like to create?",
+          content: "Hey! 👋 I'm here to help you create engaging learning experiences.\n\nJust tell me what you're thinking, whether it's a quiz, flashcards, or a matching game. You can be as specific or vague as you want. I'll ask questions if I need more details!\n\n**Quick examples:**\n• \"Create a lecture quiz on microeconomics\"\n• \"I need vocabulary flashcards for business English\"\n• \"Build a compliance training assessment\"\n\nWhat would you like to create?",
         }]);
       }
     };
@@ -1121,7 +1121,7 @@ const ChatInterface = ({
         // Display the assistant's reply. Never fall back to a canned greeting —
         // if the model returned nothing usable, say so and let the user retry.
         const rawMsg = typeof action.data.message === "string" ? action.data.message.trim() : "";
-        const msg = rawMsg || "Sorry — I didn't catch that. Could you send it again?";
+        const msg = rawMsg || "Sorry, I didn't catch that. Could you send it again?";
         const options = Array.isArray(action.data.options)
           ? action.data.options
               .filter((o: unknown) => typeof o === "string" && o.trim().length > 0)

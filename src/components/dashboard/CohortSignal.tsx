@@ -127,7 +127,7 @@ export const CohortSignal = ({
           </div>
           {isEmpty || studentsReached === 0 ? (
             <p className="text-sm text-primary/60 leading-relaxed max-w-xs">
-              Share a link — student responses show up here as they come in.
+              Share a link. Student responses show up here as they come in.
             </p>
           ) : (
             <>

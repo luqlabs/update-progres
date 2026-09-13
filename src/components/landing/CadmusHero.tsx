@@ -11,20 +11,20 @@ export const CadmusHero = () => {
           className="font-display text-5xl md:text-7xl leading-[1.05] tracking-tight mb-8 mx-auto max-w-4xl"
           style={{ color: 'hsl(var(--hero-band-foreground))' }}
         >
-          Walk into every lecture knowing what your cohort is still struggling with — and what to explain next.
+          Walk into every lecture knowing what your cohort is still struggling with and what to explain next.
         </h1>
         <p
           className="text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10"
           style={{ color: 'hsl(var(--hero-band-muted))' }}
         >
-          Chat for five minutes, get a pre-lecture check, share one link. No student logins, no LMS setup, no marking.
+          Chat for five minutes, get a pre lecture check, share one link. No student logins, no LMS setup, no marking.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button
             onClick={() => navigate('/auth?mode=signup')}
             className="rounded-md bg-white text-black px-8 py-4 font-nav text-base font-semibold hover:bg-gray-100 transition-colors"
           >
-            Start your first check — free
+            Start your first check free
           </button>
         </div>
       </div>

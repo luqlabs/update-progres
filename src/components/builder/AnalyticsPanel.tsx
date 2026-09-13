@@ -778,7 +778,7 @@ ${questionRows ? `<h2>Question Analysis</h2><table><thead><tr><th>#</th><th>Ques
         setTimeout(() => document.body.removeChild(iframe), 1000);
       }, 500);
     }
-    toast.success('PDF report ready — use your browser\'s print dialog to save');
+    toast.success('PDF report ready. Use your browser\'s print dialog to save');
   };
 
   useEffect(() => {

@@ -9,7 +9,7 @@ const testimonials: { name: string; role: string; content: string }[] = [];
 const proofPoints = [
   {
     label: "Five minutes before the lecture",
-    body: "Paste a PDF, slide deck, Word document or URL and get a first draft of a pre-lecture check built only from that material. Refine it by chatting, or edit every question by hand.",
+    body: "Paste a PDF, slide deck, Word document or URL and get a first draft of a pre lecture check built only from that material. Refine it by chatting, or edit every question by hand.",
     icon: Timer,
     color: "text-orange-600"
   },
@@ -20,7 +20,7 @@ const proofPoints = [
     color: "text-rose-600"
   },
   {
-    label: "Question-level cohort results",
+    label: "Question level cohort results",
     body: "See which questions the cohort missed and how responses spread across readiness bands, so the lecture can start on the gap instead of the assumption.",
     icon: BarChart,
     color: "text-emerald-600"
@@ -118,11 +118,11 @@ export const TestimonialSection = () => {
   return (
     <section ref={sectionRef} className="py-24 md:py-32 px-6 sm:px-8 max-w-6xl mx-auto overflow-hidden">
       <div className="text-center mb-20 relative z-30">
-        <span className="text-xs font-bold uppercase tracking-[0.16em] text-orange-900/50 mb-6 block">
+        <span className="text-sm font-bold tracking-wider text-orange-900/50 mb-6 block">
           What you get
         </span>
         <h2 className="font-display italic text-4xl md:text-5xl lg:text-6xl text-slate-900 mb-6 leading-[1.15]">
-          What a single pre-lecture check gives you
+          What a single pre lecture check gives you
         </h2>
         <p className="text-lg md:text-xl text-slate-800/70 leading-relaxed max-w-xl mx-auto font-medium">
           Built for the way lecturers actually prepare a session.

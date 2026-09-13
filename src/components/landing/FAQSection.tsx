@@ -9,27 +9,27 @@ const faqs = [
   },
   {
     question: "Who is Quizabl for?",
-    answer: "Quizabl is built for university lecturers — professors, lecturers and assistant lecturers or TAs — who use formative and pre-lecture checks to find out what their cohort already knows before teaching it."
+    answer: "Quizabl is built for university lecturers, professors, and assistant lecturers or TAs who use formative and pre lecture checks to find out what their cohort already knows before teaching it."
   },
   {
     question: "What can I create?",
-    answer: "You can create: Quizzes with 9 question types (multiple choice, true/false, short answer, fill-in-the-blank, polls, word clouds, open-ended, instructional slides, and matching). Flashcards with spaced repetition and self-rating. Matching Games with drag-and-drop gameplay, timers, and scores."
+    answer: "You can create: Quizzes with 9 question types (multiple choice, true/false, short answer, fill in the blank, polls, word clouds, open ended, instructional slides, and matching). Flashcards with spaced repetition and self rating. Matching Games with drag and drop gameplay, timers, and scores."
   },
   {
     question: "How does the AI work?",
-    answer: "Upload your content—lecture notes, PDFs, or URLs—and describe what you need. For example: 'Generate a comprehension check from this PDF' or 'Build vocabulary flashcards from this article.' The AI analyzes your material and builds the activity instantly."
+    answer: "Upload your content (lecture notes, PDFs, or URLs) and describe what you need. For example: 'Generate a comprehension check from this PDF' or 'Build vocabulary flashcards from this article.' The AI analyzes your material and builds the activity instantly."
   },
   {
     question: "Can I edit the activities myself?",
-    answer: "Yes. Use the three-panel builder: Preview (real-time view), Edit (full control over questions, answers, hints, timers, cards, or pairs), and Analytics (see how participants are performing). Or simply chat to make changes—'Make it harder' or 'Add a hint.'"
+    answer: "Yes. Use the three panel builder: Preview (real time view), Edit (full control over questions, answers, hints, timers, cards, or pairs), and Analytics (see how participants are performing). Or simply chat to make changes like 'Make it harder' or 'Add a hint.'"
   },
   {
     question: "How do participants access activities?",
-    answer: "Share a link or QR code. Participants enter a display name and start immediately—no accounts, passwords, or LMS integration required."
+    answer: "Share a link or QR code. Participants enter a display name and start immediately. No accounts, passwords, or LMS integration required."
   },
   {
     question: "What analytics are available?",
-    answer: "Quizzes: plays, average score, completion rate, common mistakes, score distribution, and individual sessions. Flashcards: cards reviewed, self-ratings, average time per card. Matching Games: average matches, challenging pairs, completion time."
+    answer: "Quizzes: plays, average score, completion rate, common mistakes, score distribution, and individual sessions. Flashcards: cards reviewed, self ratings, average time per card. Matching Games: average matches, challenging pairs, completion time."
   },
   {
     question: "How much does Quizabl cost?",
@@ -37,28 +37,28 @@ const faqs = [
   },
   {
     question: "What is the difference between Basic and Pro?",
-    answer: "Both plans include every feature — advanced analytics, hidden Quizabl branding, and priority support. The difference is capacity: Basic gives you 50 AI credits and up to 50 activities per month, while Pro gives you 150 credits and unlimited activities for lecturers teaching several cohorts."
+    answer: "Both plans include every feature: advanced analytics, hidden Quizabl branding, and priority support. The difference is capacity: Basic gives you 50 AI credits and up to 50 activities per month, while Pro gives you 150 credits and unlimited activities for lecturers teaching several cohorts."
   },
   {
     question: "What is an AI credit?",
-    answer: "One credit covers one AI action — generating an activity from your material or making an AI edit through chat. Manual editing, sharing, participant plays, and analytics never cost credits. Credits reset at the start of each billing month."
+    answer: "One credit covers one AI action like generating an activity from your material or making an AI edit through chat. Manual editing, sharing, participant plays, and analytics never cost credits. Credits reset at the start of each billing month."
   },
   {
     question: "How many free credits do I get?",
-    answer: "The Free plan includes 5 AI credits every month and up to 10 activities, with unlimited participants and unlimited plays. No card required — upgrade only when you need more capacity."
+    answer: "The Free plan includes 5 AI credits every month and up to 10 activities, with unlimited participants and unlimited plays. No card required. Upgrade only when you need more capacity."
   },
 
   {
     question: "Does Quizabl save my work automatically?",
-    answer: "Yes. Auto-save is built in, with undo/redo for configuration changes."
+    answer: "Yes. Auto save is built in, with undo/redo for configuration changes."
   },
   {
     question: "How is Quizabl different from Kahoot or Quizizz?",
-    answer: "Chat-to-Edit: Refine activities through conversation instead of clicking through menus. Content Analysis: Upload your actual lecture notes or training docs—not just topics. No Accounts Needed: Participants join via link or QR instantly. Deeper Analytics: Session-level details, common mistakes, and time-on-task insights."
+    answer: "Chat to Edit: Refine activities through conversation instead of clicking through menus. Content Analysis: Upload your actual lecture notes or training docs, not just topics. No Accounts Needed: Participants join via link or QR instantly. Deeper Analytics: Session level details, common mistakes, and time on task insights."
   },
   {
     question: "What makes Quizabl special?",
-    answer: "Professional-grade speed. Upload your content, chat to refine, and share in minutes. No manual question building, no LMS headaches, and actionable analytics to improve your materials."
+    answer: "Professional grade speed. Upload your content, chat to refine, and share in minutes. No manual question building, no LMS headaches, and actionable analytics to improve your materials."
   }
 ];
 
@@ -79,7 +79,7 @@ export const FAQSection = () => {
       {/* Floating Card for readability */}
       <div className="relative z-10 w-full max-w-4xl bg-white/95 backdrop-blur-sm shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] rounded-[2.5rem] p-8 md:p-14 border border-white">
         <div className="text-center mb-12">
-          <span className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500 mb-6 block">
+          <span className="text-sm font-bold tracking-wider text-slate-500 mb-6 block">
             FAQ
           </span>
           <h3 className="font-display italic text-3xl md:text-5xl text-slate-900 mb-4 leading-[1.15]">

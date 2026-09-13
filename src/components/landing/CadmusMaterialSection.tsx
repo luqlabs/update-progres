@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { FileText, File, Link as LinkIcon, Book, Download, Presentation } from "lucide-react";
-import libraryImg from "@/assets/landing/collage-ask.jpg";
-import studentImg from "@/assets/landing/collage-generate.jpg";
-import shareImg from "@/assets/landing/collage-share.jpg";
-import diagnoseImg from "@/assets/landing/collage-diagnose.jpg";
+import imgPdf from "@/assets/landing/pdf_real.jpg";
+import imgWord from "@/assets/landing/word_real.jpg";
+import imgUrl from "@/assets/landing/weburl_real.jpg";
+import imgPpt from "@/assets/landing/ppt_real.jpg";
 
 const materials = [
   {
@@ -14,8 +14,8 @@ const materials = [
     bgColor: "bg-rose-100/70",
     hoverBg: "hover:bg-rose-50",
     title: "Import from PDF instantly",
-    description: "Upload any PDF lecture notes or readings. Quizabl instantly understands the context and generates highly relevant pre-lecture questions.",
-    img: libraryImg,
+    description: "Upload any PDF lecture notes or readings. Quizabl instantly understands the context and generates highly relevant pre lecture questions.",
+    img: imgPdf,
   },
   {
     id: "word",
@@ -26,7 +26,7 @@ const materials = [
     hoverBg: "hover:bg-blue-50",
     title: "Process Word documents",
     description: "Drop your .docx files directly into the platform. We'll extract the key concepts and turn them into engaging student activities.",
-    img: studentImg,
+    img: imgWord,
   },
   {
     id: "url",
@@ -36,30 +36,8 @@ const materials = [
     bgColor: "bg-teal-100/70",
     hoverBg: "hover:bg-teal-50",
     title: "Scrape content from any URL",
-    description: "Paste a link to an article, journal, or website. Quizabl will read the content and build a targeted pre-lecture check in seconds.",
-    img: shareImg,
-  },
-  {
-    id: "notion",
-    label: "Notion",
-    icon: Book,
-    iconColor: "text-purple-600",
-    bgColor: "bg-purple-100/70",
-    hoverBg: "hover:bg-purple-50",
-    title: "Sync with your Notion workspace",
-    description: "Connect your Notion pages seamlessly. Turn your structured lecture outlines into interactive student assessments without copy-pasting.",
-    img: diagnoseImg,
-  },
-  {
-    id: "canvas",
-    label: "Canvas export",
-    icon: Download,
-    iconColor: "text-orange-500",
-    bgColor: "bg-orange-100/70",
-    hoverBg: "hover:bg-orange-50",
-    title: "Export directly to Canvas LMS",
-    description: "Once your pre-lecture check is ready, push it directly to your Canvas course with one click. No manual setup required.",
-    img: libraryImg,
+    description: "Paste a link to an article, journal, or website. Quizabl will read the content and build a targeted pre lecture check in seconds.",
+    img: imgUrl,
   },
   {
     id: "powerpoint",
@@ -70,7 +48,7 @@ const materials = [
     hoverBg: "hover:bg-pink-50",
     title: "Transform slide decks into quizzes",
     description: "Upload your PPTX lecture slides. We analyze the textual content and create assessments tailored to your exact presentation.",
-    img: studentImg,
+    img: imgPpt,
   },
 ];
 

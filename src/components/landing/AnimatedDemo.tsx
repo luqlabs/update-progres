@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { Send, Sparkles, CheckCircle2, TrendingDown, Clock, BarChart2, Link as LinkIcon } from "lucide-react";
 
 const SCRIPT = [
-  { at: 0, kind: "user", text: "Create a 5-question pre-lecture activity from my lecture notes on mental health." },
+  { at: 0, kind: "user", text: "Create a 5-question pre lecture activity from my lecture notes on mental health." },
   { at: 1, kind: "thinking", text: "Reading your material…" },
-  { at: 2, kind: "ai", text: "Done — 5 questions, mixed difficulty. Want hints added?" },
+  { at: 2, kind: "ai", text: "Done. 5 questions, mixed difficulty. Want hints added?" },
   { at: 3, kind: "user", text: "Yes, and make question 3 harder." },
   { at: 4, kind: "ai", text: "Updated. Share the link with your cohort whenever you're ready." },
 ] as const;
@@ -30,11 +30,11 @@ export const AnimatedDemo = () => {
     <section className="py-24 md:py-32">
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
         <div className="text-center max-w-4xl mx-auto mb-16">
-          <span className="inline-block px-3 py-1 bg-black/5 text-slate-700 text-xs font-bold uppercase tracking-[0.2em] mb-6 rounded">
+          <span className="inline-block px-3 py-1 bg-black/5 text-slate-700 text-xs font-bold tracking-wider mb-6 rounded">
             See it in motion
           </span>
           <h2 className="font-display italic text-4xl md:text-5xl lg:text-6xl text-slate-900 leading-tight">
-            Chat on the left. A ready-to-share quiz on the right.
+            Chat on the left. A ready to share quiz on the right.
           </h2>
           <p className="text-base md:text-lg text-slate-600 mt-6 leading-relaxed max-w-3xl mx-auto">
             No question editors, no templates. Describe what your students need to know,
@@ -89,7 +89,7 @@ export const AnimatedDemo = () => {
           {/* Preview side */}
           <div className="p-5 sm:p-6 bg-background">
             <div className="flex items-center justify-between mb-4">
-              <span className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+              <span className="text-xs font-semibold tracking-wider text-muted-foreground">
                 Live preview
               </span>
               <span className="text-[11px] rounded-md border border-border px-2 py-0.5 text-muted-foreground">
@@ -141,54 +141,18 @@ export const AnimatedDemo = () => {
                 step >= 6 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
               }`}
             >
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground mb-1">
+              <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-muted-foreground mb-1">
                 <TrendingDown className="w-3.5 h-3.5" />
                 What you get back
               </div>
               <p className="text-[13px] text-foreground leading-relaxed">
-                42% of your cohort missed <span className="font-semibold">prevalence &amp; epidemiology</span> — start
+                42% of your cohort missed <span className="font-semibold">prevalence &amp; epidemiology</span>. Start
                 Monday's lecture there.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Lecturer benefits styled like Cadmus cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
-          {[
-            {
-              title: "5 minutes, not an evening",
-              desc: "A full pre-lecture activity built in one conversation.",
-              icon: Clock,
-              color: "text-blue-600",
-              bg: "bg-blue-100",
-            },
-            {
-              title: "Gaps, not just grades",
-              desc: "See exactly which topic your cohort is weakest on.",
-              icon: BarChart2,
-              color: "text-rose-600",
-              bg: "bg-rose-100",
-            },
-            {
-              title: "One link, no logins",
-              desc: "Students join instantly — nothing to set up.",
-              icon: LinkIcon,
-              color: "text-green-600",
-              bg: "bg-green-100",
-            },
-          ].map((benefit) => (
-            <div key={benefit.title} className="rounded-2xl bg-[#FFFDFA] p-8 shadow-sm flex flex-col gap-4">
-              <div className={`w-10 h-10 rounded-lg ${benefit.bg} flex items-center justify-center`}>
-                <benefit.icon className={`w-5 h-5 ${benefit.color}`} />
-              </div>
-              <div>
-                <h4 className="text-base font-bold text-slate-800 mb-2">{benefit.title}</h4>
-                <p className="text-sm text-slate-600 leading-relaxed">{benefit.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

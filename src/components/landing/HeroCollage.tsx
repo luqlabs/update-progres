@@ -1,14 +1,11 @@
 import { MessageSquare, Sparkles, Share2, BarChart3 } from "lucide-react";
-import askImg from "@/assets/landing/collage-ask.jpg";
-import generateImg from "@/assets/landing/collage-generate.jpg";
-import shareImg from "@/assets/landing/collage-share.jpg";
-import diagnoseImg from "@/assets/landing/collage-diagnose.jpg";
+import imgAsk from "@/assets/landing/hero-ask.webp";
 
 const cards = [
-  { label: "Ask", icon: MessageSquare, img: askImg, offset: "md:mt-16" },
-  { label: "Generate", icon: Sparkles, img: generateImg, offset: "md:mt-0" },
-  { label: "Share", icon: Share2, img: shareImg, offset: "md:mt-24" },
-  { label: "Diagnose", icon: BarChart3, img: diagnoseImg, offset: "md:mt-8" },
+  { label: "Ask", icon: MessageSquare, img: imgAsk, offset: "md:mt-16" },
+  { label: "Generate", icon: Sparkles, img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800", offset: "md:mt-0" },
+  { label: "Share", icon: Share2, img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800", offset: "md:mt-24" },
+  { label: "Diagnose", icon: BarChart3, img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800", offset: "md:mt-8" },
 ];
 
 export const HeroCollage = () => {

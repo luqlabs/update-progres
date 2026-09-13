@@ -7,7 +7,7 @@ const benefits = [
   },
   {
     icon: MessageSquare,
-    text: "No student logins, no setup — one link works on any device.",
+    text: "No student logins, no setup. One link works on any device.",
   },
   {
     icon: FileText,

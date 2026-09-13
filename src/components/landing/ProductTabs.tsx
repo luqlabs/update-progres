@@ -1,20 +1,20 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ListChecks, Layers, Shuffle, PencilRuler, BarChart3, ArrowRight } from "lucide-react";
-import quizzesImg from "@/assets/landing/product-quizzes.png.asset.json";
-import flashcardsImg from "@/assets/landing/product-flashcards.png.asset.json";
-import shareImg from "@/assets/landing/collage-share.jpg";
-import diagnoseImg from "@/assets/landing/collage-diagnose.jpg";
-import analyticsImg from "@/assets/landing/product-analytics.jpg";
+import quizzesImg from "@/assets/landing/tab_quizzes_real_v2.jpg";
+import flashcardsImg from "@/assets/landing/tab_flashcards_real_v2.jpg";
+import matchingImg from "@/assets/landing/tab_matching_real_v2.jpg";
+import editingImg from "@/assets/landing/tab_editing_real_v2.jpg";
+import analyticsImg from "@/assets/landing/tab_analytics_real_v2.jpg";
 
 const products = [
   {
     id: "quizzes",
     label: "Quizzes",
     icon: ListChecks,
-    img: quizzesImg.url,
-    title: "Pre-lecture quizzes, built by conversation",
-    body: "Describe the topic or drop in your lecture notes, and get a well-formed quiz in minutes. Multiple choice, true/false, fill-in-the-blank, short answer and open-ended — mixed exactly how you want it.",
+    img: quizzesImg,
+    title: "Pre lecture quizzes, built by conversation",
+    body: "Describe the topic or drop in your lecture notes, and get a well-formed quiz in minutes. Multiple choice, true/false, fill in the blank, short answer and open ended, mixed exactly how you want it.",
     tagBg: "#ede9fe",
     tagText: "#6d28d9",
     cardBg: "#faf5ff",
@@ -23,8 +23,8 @@ const products = [
     id: "flashcards",
     label: "Flashcards",
     icon: Layers,
-    img: flashcardsImg.url,
-    title: "Pre-reading that students actually finish",
+    img: flashcardsImg,
+    title: "Pre reading that students actually finish",
     body: "Turn a chapter or slide deck into a flashcard set students can run through on their phone before the session, with no account to create.",
     tagBg: "#dbeafe",
     tagText: "#1d4ed8",
@@ -34,7 +34,7 @@ const products = [
     id: "matching",
     label: "Matching games",
     icon: Shuffle,
-    img: shareImg,
+    img: matchingImg,
     title: "Terminology drilling without the busywork",
     body: "Pair terms with definitions, structures with functions, statutes with principles. Ideal for the vocabulary-heavy first weeks of a unit.",
     tagBg: "#fef3c7",
@@ -45,9 +45,9 @@ const products = [
     id: "editing",
     label: "Manual editing",
     icon: PencilRuler,
-    img: diagnoseImg,
+    img: editingImg,
     title: "Full control over every question",
-    body: "Start from scratch or edit anything the assistant produced. Rewrite stems, reorder options, change the correct answer, add explanations — the editor is always yours.",
+    body: "Start from scratch or edit anything the assistant produced. Rewrite stems, reorder options, change the correct answer, add explanations. The editor is always yours.",
     tagBg: "#d1fae5",
     tagText: "#047857",
     cardBg: "#ecfdf5",

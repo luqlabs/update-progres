@@ -10,7 +10,7 @@ import whyQuizablBanner from "@/assets/landing/why-quizabl-banner.jpg";
 import { CadmusMaterialSection } from "@/components/landing/CadmusMaterialSection";
 import { AnimatedDemo } from "@/components/landing/AnimatedDemo";
 import { CadmusHowItWorks } from "@/components/landing/CadmusHowItWorks";
-import ctaIllustration from "@/assets/landing/cta-illustration.png";
+import ctaIllustration from "@/assets/landing/RV bhs inggris.png";
 
 import { ProductTabs } from "@/components/landing/ProductTabs";
 import { StatsSection } from "@/components/landing/StatsSection";
@@ -65,27 +65,27 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Quizabl — Pre-lecture Checks for Lecturers, Tutors & Professors</title>
+        <title>Quizabl | Pre lecture Checks for Lecturers, Tutors & Professors</title>
       </Helmet>
 
-      <div className="min-h-screen w-full bg-background text-foreground selection:bg-accent/20 selection:text-primary pb-0">
+      <div className="min-h-screen w-full overflow-x-hidden bg-background text-foreground selection:bg-accent/20 selection:text-primary pb-0">
         {/* Original Lovable Hero + Nav */}
         <div style={{ backgroundColor: 'hsl(var(--hero-band))' }}>
           
-          {/* Floating Pill Nav */}
-          <div className="pt-6 px-4 sm:px-6 z-50 relative">
-            <nav className="mx-auto max-w-5xl bg-background rounded-full px-4 py-3 sm:py-4 flex items-center justify-between shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+          {/* Floating Compact Nav */}
+          <div className="pt-5 px-4 z-50 relative flex justify-center">
+            <nav className="w-full max-w-3xl bg-background rounded-xl px-4 py-2 flex items-center justify-between shadow-sm">
               <button onClick={() => navigate('/')} className="flex items-center shrink-0" aria-label="Quizabl home">
                 <Logo size="sm" />
               </button>
-              <div className="hidden md:flex items-center gap-7 font-nav text-[13px] font-medium text-foreground">
+              <div className="hidden md:flex items-center gap-5 font-nav text-[13px] font-medium text-foreground">
                 <button onClick={() => scrollTo('features')} className="hover:text-primary transition-colors">Features</button>
                 <button onClick={() => scrollTo('audience')} className="hover:text-primary transition-colors">Who it's for</button>
                 <button onClick={() => scrollTo('pricing')} className="hover:text-primary transition-colors">Pricing</button>
               </div>
               <div className="flex items-center gap-2 sm:gap-4">
-                <button onClick={() => navigate('/auth')} className="hidden sm:inline-flex font-nav text-[13px] font-semibold text-foreground hover:text-primary transition-colors border px-4 py-1.5 rounded-full border-border">Login</button>
-                <button onClick={() => navigate('/auth?mode=signup')} className="hidden sm:inline-flex font-nav text-[13px] font-semibold rounded-full bg-primary text-primary-foreground px-5 py-2 hover:bg-primary-hover transition-colors">Sign up</button>
+                <button onClick={() => navigate('/auth')} className="hidden sm:inline-flex font-nav text-[13px] font-semibold text-foreground hover:text-primary transition-colors px-2 py-1.5">Login</button>
+                <button onClick={() => navigate('/auth?mode=signup')} className="hidden sm:inline-flex font-nav text-[13px] font-semibold rounded-lg bg-primary text-primary-foreground px-4 py-2 hover:bg-primary-hover transition-colors shadow-sm">Sign up</button>
                 <Sheet>
                   <SheetTrigger asChild className="md:hidden">
                     <button aria-label="Open menu" className="p-2 -mr-1 text-foreground">
@@ -103,25 +103,25 @@ const Index = () => {
           </div>
 
           {/* Hero Content */}
-          <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center pt-16 md:pt-24 animate-fade-in">
+          <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center pt-8 md:pt-10 animate-fade-in">
             <h1
               className="font-display text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6"
               style={{ color: 'hsl(var(--hero-band-foreground))' }}
             >
-              Walk into every lecture knowing what your cohort is still struggling with — and what to explain next.
+              Walk into every lecture knowing what your cohort is still struggling with and what to explain next.
             </h1>
             <p
               className="text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-10"
               style={{ color: 'hsl(var(--hero-band-muted))' }}
             >
-              Chat for five minutes, get a pre-lecture check, share one link. No student logins, no LMS setup, no marking.
+              Chat for five minutes, get a pre lecture check, share one link. No student logins, no LMS setup, no marking.
             </p>
             <div className="flex justify-center">
               <button
                 onClick={() => navigate('/auth?mode=signup')}
                 className="rounded-md bg-white text-black px-6 py-3 font-nav text-sm font-semibold hover:opacity-90 transition-opacity"
               >
-                Start your first check — free
+                Start your first check free
               </button>
             </div>
           </div>
@@ -155,7 +155,7 @@ const Index = () => {
         </div>
 
         {/* 7. Why Quizabl — Cadmus Case Study Style */}
-        <div className="relative z-[22] -mt-16 rounded-t-[3rem] md:rounded-t-[4rem] overflow-hidden" style={{ backgroundColor: 'hsl(var(--cadmus-peach) / 0.35)' }}>
+        <div className="relative z-[22] -mt-16 rounded-t-[3rem] md:rounded-t-[4rem] overflow-hidden" style={{ backgroundColor: 'hsl(var(--cadmus-peach))' }}>
           <section className="py-20 md:py-28">
             <div className="max-w-6xl mx-auto px-6 sm:px-8">
 
@@ -180,9 +180,9 @@ const Index = () => {
                   max-w-md
                 ">
                   <div className="flex items-center gap-2 mb-5">
-                    <span className="text-[11px] font-bold uppercase tracking-[0.1em] text-muted-foreground">Why Quizabl</span>
+                    <span className="text-xs font-bold tracking-wider text-muted-foreground">Why Quizabl</span>
                     <span className="text-muted-foreground/40">|</span>
-                    <span className="text-[11px] font-bold uppercase tracking-[0.1em] text-muted-foreground">Higher Education</span>
+                    <span className="text-xs font-bold tracking-wider text-muted-foreground">Higher Education</span>
                   </div>
                   <h3 className="font-display text-2xl md:text-3xl text-foreground mb-6 leading-[1.15]">
                     Why lecturers choose Quizabl for their cohort
@@ -190,7 +190,7 @@ const Index = () => {
                   <div className="space-y-4">
                     {[
                       { title: "Spot the gaps", desc: "Spot the gaps in your cohort before the lecture, not after the exam." },
-                      { title: "No student logins", desc: "No student logins, no setup — one link works on any device." },
+                      { title: "No student logins", desc: "No student logins, no setup. One link works on any device." },
                       { title: "Your material", desc: "Works with the material you already have: PDFs, slides, notes or a URL." },
                       { title: "Minutes, not hours", desc: "Build, edit and share in a single sitting." },
                     ].map((item) => (
@@ -205,7 +205,7 @@ const Index = () => {
 
               {/* Stats Row */}
               <div className="text-center">
-                <span className="block text-[11px] font-bold uppercase tracking-[0.14em] mb-8" style={{ color: 'hsl(var(--primary))' }}>
+                <span className="block text-xs font-bold tracking-wider mb-8" style={{ color: 'hsl(var(--primary))' }}>
                   Built for speed and simplicity
                 </span>
                 <StatsSection tone="light" />
@@ -245,34 +245,48 @@ const Index = () => {
           <FAQSection />
         </div>
 
-        {/* 14. Footer CTA & Footer */}
-        <div className="relative z-[60] -mt-16 rounded-t-[3rem] md:rounded-t-[4rem] overflow-hidden bg-[#fdfaf6]">
-          <section className="py-24 md:py-32 px-6 sm:px-8 border-b border-slate-200/50">
-            <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 md:gap-8">
-              <div className="w-full md:w-1/2 md:pr-12 text-center md:text-left">
+        {/* 14. Footer CTA */}
+        <div className="relative z-[60] -mt-16 rounded-t-[3rem] md:rounded-t-[4rem] overflow-hidden" style={{ backgroundColor: 'hsl(var(--cadmus-peach))' }}>
+          <section className="pt-24 pb-12 md:pt-32 md:pb-16 px-6 sm:px-8">
+            <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 md:gap-16">
+              <div className="w-full md:w-1/2 text-center md:text-left">
                 <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-slate-900 mb-8 leading-[1.1] tracking-tight">
-                  Start with a single pre-lecture activity.
+                  Start with a single pre lecture activity.
                 </h2>
-                <button 
-                  onClick={() => navigate('/auth')} 
-                  className="rounded-md bg-slate-900 text-white px-8 py-3.5 font-nav text-[15px] font-semibold hover:bg-slate-800 transition-colors shadow-sm"
-                >
-                  Get started free
-                </button>
+                <p className="text-lg text-slate-700 mb-10 leading-relaxed">
+                  Join educators who have already discovered the fastest way to engage their cohorts and find out exactly what they don't know.
+                </p>
+                <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
+                  <button 
+                    onClick={() => navigate('/auth')} 
+                    className="rounded-full bg-slate-900 text-white px-8 py-3.5 font-nav text-[15px] font-semibold hover:bg-slate-800 transition-colors shadow-sm w-full sm:w-auto"
+                  >
+                    Get started free
+                  </button>
+                  <button 
+                    onClick={() => navigate('/auth')} 
+                    className="rounded-full bg-white text-slate-900 border border-slate-200 px-8 py-3.5 font-nav text-[15px] font-semibold hover:bg-slate-50 transition-colors shadow-sm w-full sm:w-auto"
+                  >
+                    Talk to sales
+                  </button>
+                </div>
               </div>
-              <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+              <div className="w-full md:w-1/2 flex justify-center md:justify-end relative">
+                {/* Decorative blob or circle behind image */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/60 to-white/10 rounded-full blur-3xl -z-10 transform scale-90" />
                 <img 
                   src={ctaIllustration} 
                   alt="Quizabl interactive cards" 
-                  className="w-full max-w-[500px] h-auto object-contain drop-shadow-md"
+                  className="w-full max-w-[450px] h-auto object-contain transform hover:scale-105 transition-transform duration-700 hover:rotate-1"
                 />
               </div>
             </div>
           </section>
-          
-          <div className="bg-white">
-            <Footer />
-          </div>
+        </div>
+
+        {/* 15. Footer */}
+        <div className="relative z-[70] -mt-16 rounded-t-[3rem] md:rounded-t-[4rem] overflow-hidden" style={{ backgroundColor: 'hsl(var(--hero-band))' }}>
+          <Footer />
         </div>
 
       </div>

@@ -23,7 +23,7 @@ const audiences = [
   {
     icon: FlaskConical,
     title: "STEM Lecturers",
-    description: "Catch shaky prerequisites — algebra, units, notation — before they compound through the whole module.",
+    description: "Catch shaky prerequisites like algebra, units, and notation before they compound through the whole module.",
     color: "text-emerald-600"
   },
   {
@@ -59,10 +59,10 @@ export const TargetAudienceSection = ({ className = "" }: { className?: string }
   }, []);
 
   return (
-    <section ref={sectionRef} className={`relative pt-32 pb-24 overflow-hidden ${className}`}>
+    <section ref={sectionRef} className={`relative pt-8 md:pt-12 pb-32 overflow-hidden ${className}`}>
       
       {/* 1. Parallax Floating Hero Zone */}
-      <div className="relative max-w-6xl mx-auto px-6 mb-24 min-h-[40vh] md:min-h-[50vh] flex flex-col items-center justify-center">
+      <div className="relative max-w-6xl mx-auto px-6 mb-16 min-h-[40vh] md:min-h-[50vh] flex flex-col items-center justify-center">
         
         {/* Left Side Pills (Moving Right as you scroll down) */}
         <div 
@@ -116,7 +116,7 @@ export const TargetAudienceSection = ({ className = "" }: { className?: string }
 
         {/* Center Text */}
         <div className="relative z-10 text-center max-w-2xl mx-auto px-4">
-          <span className="text-xs font-bold uppercase tracking-[0.16em] text-orange-900/50 mb-6 block">
+          <span className="text-sm font-bold tracking-wider text-orange-900/50 mb-6 block">
             Who it's for
           </span>
           <h2 className="font-display italic text-4xl md:text-5xl lg:text-6xl text-slate-900 mb-6 leading-[1.15]">
